@@ -6,13 +6,13 @@ const cors = require('cors')
 app.use(cors())
 connectDB()
 app.use(express.json({ extended: true }))
-const PORT = process.env.PORT || 4000
+const port = process.env.PORT || 4000
 
 app.use('/api/user', require('./routes/UserRoute'))
 app.use('/api/auth', require('./routes/AuthRoute'))
 app.use('/api/projects', require('./routes/ProjectsRoute'))
 app.use('/api/tasks', require('./routes/TasksRoute'))
 
-app.listen(PORT, () => {
-  console.log(`Running server in the port: ${PORT}`)
+app.listen(port,'0.0.0.0', () => {
+  console.log(`Running server in the port: ${port}`)
 })
